@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident Response Checklist | SOC 2</title>
+<meta name="description" content="Free SOC 2 incident response checklist. Prepare before an incident, track one when it happens, and export the record. Maps to CC7.3, CC7.4, and P6.6.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">AI Tech Pros <span>SOC 2 Tools</span></div>
+    <h1>Incident Response Checklist</h1>
+    <p class="sub">Prepare before an incident hits. Track one cleanly when it does. Built around the SOC 2 criteria that govern incident response: CC7.3 (event triage), CC7.4 (incident response), P6.5 and P6.6 (breach notification).</p>
+    <p class="disclaimer">Readiness aid only. Not legal advice. Consult counsel on breach notification obligations.</p>
+  </div>
+</header>
+
+<nav class="tabs wrap" aria-label="Sections">
+  <button class="tab on" data-tab="prepare">Prepare</button>
+  <button class="tab" data-tab="incident">Active incident</button>
+  <button class="tab" data-tab="log">Log &amp; export</button>
+</nav>
+
+<main class="wrap">
+
+  <!-- PREPARE -->
+  <section class="card tabpane" id="tab-prepare">
+    <h2>Incident readiness</h2>
+    <p class="muted">Work through this list before you ever need it. An auditor testing CC7.4 will ask for every one of these.</p>
+    <div class="progress"><div class="progress-fill" id="prepFill"></div></div>
+    <p class="muted small" id="prepText">0 of 7 ready</p>
+    <div id="prepList"></div>
+    <h2>What the criteria ask for</h2>
+    <div id="tscRefs" class="refs"></div>
+    <div class="row">
+      <button id="exportPrep" class="btn">Download readiness checklist (Markdown)</button>
+      <button id="resetPrep" class="btn ghost danger">Clear readiness answers</button>
+    </div>
+  </section>
+
+  <!-- ACTIVE INCIDENT -->
+  <section class="card tabpane hidden" id="tab-incident">
+    <h2>Incidents</h2>
+    <div class="row">
+      <input id="newName" type="text" placeholder="Incident name, e.g. Suspected credential theft" maxlength="120">
+      <input id="newNotes" type="text" placeholder="Short description (optional)" maxlength="240">
+      <button id="startIncident" class="btn primary">Start incident</button>
+    </div>
+    <div class="row">
+      <select id="incidentSelect" aria-label="Select incident"></select>
+      <button id="closeIncident" class="btn ghost">Close incident</button>
+      <button id="deleteIncident" class="btn ghost danger">Delete incident</button>
+    </div>
+    <div id="incidentDetail"></div>
+  </section>
+
+  <!-- LOG & EXPORT -->
+  <section class="card tabpane hidden" id="tab-log">
+    <h2>Incident log &amp; export</h2>
+    <p class="muted">The log is your record of what happened and when. Auditors and counsel both care about it.</p>
+    <div class="row">
+      <select id="logIncidentSelect" aria-label="Select incident for log"></select>
+    </div>
+    <div class="row">
+      <textarea id="logText" rows="3" placeholder="Log entry, e.g. 09:40 Contained: isolated host WEB-03 from the network."></textarea>
+      <button id="addLog" class="btn primary">Add log entry</button>
+    </div>
+    <div id="logEntries" class="loglist"></div>
+    <div class="row">
+      <button id="exportMd" class="btn primary">Download incident record (Markdown)</button>
+    </div>
+    <p class="muted small">Exports include incident metadata, task states by phase, the full log, and your readiness snapshot.</p>
+  </section>
+
+  <footer class="foot">
+    <p>Readiness aid only. Not legal advice. Consult counsel on breach notification obligations. Built by <strong>AI Tech Pros</strong>. Trust Services Criteria dataset: <a href="https://github.com/nehemiah313/tsc-dataset">github.com/nehemiah313/tsc-dataset</a>. Summaries are original plain-English guidance, not AICPA text.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
