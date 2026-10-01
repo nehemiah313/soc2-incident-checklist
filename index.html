@@ -44,8 +44,8 @@
   <section class="card tabpane hidden" id="tab-incident">
     <h2>Incidents</h2>
     <div class="row">
-      <input id="newName" type="text" placeholder="Incident name, e.g. Suspected credential theft" maxlength="120">
-      <input id="newNotes" type="text" placeholder="Short description (optional)" maxlength="240">
+      <input id="newName" type="text" placeholder="Incident name, e.g. Suspected credential theft" maxlength="120" aria-label="Incident name">
+      <input id="newNotes" type="text" placeholder="Short description (optional)" maxlength="240" aria-label="Incident description">
       <button id="startIncident" class="btn primary">Start incident</button>
     </div>
     <div class="row">
@@ -76,6 +76,8 @@
 
   <footer class="foot">
     <p>Readiness aid only. Not legal advice. Consult counsel on breach notification obligations. Built by <strong>AI Tech Pros</strong>. Trust Services Criteria dataset: <a href="https://github.com/nehemiah313/tsc-dataset">github.com/nehemiah313/tsc-dataset</a>. Summaries are original plain-English guidance, not AICPA text.</p>
+    <p>&copy; 2026 AI Tech Pros, Inc. All rights reserved. &middot; <a href="mailto:n.harvard@aitechpros.ai">n.harvard@aitechpros.ai</a> &middot; <a href="https://aitechpros.ai/privacy/">Privacy Policy</a> &middot; <a href="https://aitechpros.ai/terms/">Terms of Use</a></p>
+    <p class="storage-note">Your entries are saved only in this browser (local storage) and are never sent to us.</p>
   </footer>
 </main>
 <script src="app.js"></script>

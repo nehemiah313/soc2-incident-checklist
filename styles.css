@@ -70,3 +70,4 @@ select { cursor: pointer; }
 .foot { margin-top: 32px; padding-bottom: 48px; color: var(--muted); font-size: 13px; }
 .foot a { color: var(--accent); }
 @media (max-width: 640px) { .logentry { grid-template-columns: 1fr auto; } .logentry .lt { grid-column: 1 / -1; } }
+.foot .storage-note { font-size: .8rem; }
